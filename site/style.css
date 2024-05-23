@@ -1,0 +1,156 @@
+/* 언어 설정 */
+@charset 'utf-8';
+
+
+/* 전체 설정 */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    vertical-align: bottom;
+}
+
+
+
+
+
+/* 헤더 설정 */
+.logo {
+    font-size: 30px;
+}
+.logo a {}
+
+
+
+/* 내비 설정 */
+.box2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.gnb {}
+.gnb ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.gnb li {}
+.gnb a {
+    display: block;
+    padding: 5px;
+    font-size: 14px;
+}
+
+
+/* 메인이미지 설정 */
+.topimg {
+    max-width: 100%;
+}
+
+
+/* 공지사항 설정 */
+.notice {}
+.notice h2 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #666;
+}
+.notice ul {}
+.notice li {}
+.notice a {
+    display: block;
+    padding: 5px;
+    font-size: 14px;
+    border-bottom: dotted 2px #ddd;
+}
+.notice a::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.notice time {
+    float: left;
+}
+.notice .txt {
+    float: none;
+    margin-left: 40px;
+    padding-left: 10px;
+}
+
+
+/* 푸터 설정 */
+
+.box5 {
+    background-color: #ddd;
+    padding: 15px 0;
+}
+.copyright {}
+.copyright p {
+    font-size: 14px;
+    color: #666;
+}
+
+
+/* 여백 설정 */
+.boxA {
+    padding: 8px 10px;
+}
+.box3 {}
+.box4 {padding: 15px 10px;}
+.box5 {}
+
+
+
+
+
+
+
+
+
+/* 미디어쿼리 구간 설정------------------------------------------------------------------- */
+
+/* 768px 이상일 때 */
+@media (min-width:768px) {
+    /* 레이아웃 설정 */
+.boxA {
+    display: flex;
+}
+.boxA>div {
+    width: 50%;
+}
+
+.box2 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.gnb {}
+.gnb ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+}
+
+
+/* 와이드데스크탑 설정 */
+@media (min-width:1280px) {
+    /* 전체 너비 설정 */
+    .boxA, .copyright, .box3, .box4 {
+        width: 1140px;
+        margin: 0 auto;
+    }
+    .boxA-out {
+        border-bottom: solid 1px #ddd;
+        padding: 8px 0;
+        margin-bottom: 15px;
+    }
+}
