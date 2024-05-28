@@ -27,6 +27,7 @@ img {
     font-size: 30px;
 }
 .logo a {}
+.logo img {}
 
 
 
@@ -41,6 +42,7 @@ img {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    flex-direction: column;
 }
 .gnb li {}
 .gnb a {
@@ -56,8 +58,97 @@ img {
 }
 
 
+/* 박스6번 콘텐츠 설정 */
+.content1 {}
+.content1 a {
+    display: block;
+}
+.content1 i {
+    background-color: #afae4e;
+    color: #fff;
+    font-size: 38px;
+    display: block;
+    text-align: center;
+    padding: 40px 0;
+}
+.content1 h2 {
+    background-color: #333333;
+    color: #fff;
+    font-weight: normal;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+}
+.content1 p {
+    background-color: #5d5f5a;
+    color: #fff;
+    font-size: 12px;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.content2 {}
+.content2 a {
+    display: block;
+}
+.content2 i {
+    background-color: #ce9e03;
+    color: #fff;
+    font-size: 38px;
+    display: block;
+    text-align: center;
+    padding: 40px 0;
+}
+.content2 h2 {
+    background-color: #333333;
+    color: #fff;
+    font-weight: normal;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+}
+.content2 p {
+    background-color: #5d5f5a;
+    color: #fff;
+    font-size: 12px;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.content3 {}
+.content3 a {
+    display: block;
+}
+.content3 i {
+    background-color: #73a056;
+    color: #fff;
+    font-size: 38px;
+    display: block;
+    text-align: center;
+    padding: 40px 0;
+}
+.content3 h2 {
+    background-color: #333333;
+    color: #fff;
+    font-weight: normal;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+}
+.content3 p {
+    background-color: #5d5f5a;
+    color: #fff;
+    font-size: 12px;
+    padding: 15px 0;
+    text-align: center;
+}
+
+
 /* 공지사항 설정 */
-.notice {}
+.notice {
+    border: solid 5px #ddd;
+    padding: 20px;
+}
 .notice h2 {
     margin-bottom: 5px;
     font-size: 18px;
@@ -86,6 +177,65 @@ img {
 }
 
 
+/* sns 설정 */
+.sns {}
+.sns h2 {
+    background-color: #ddd;
+    font-size: 14px;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.sns ul {}
+.sns li {}
+
+.sns a {
+    display: block;
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+.sns i {
+    margin-left: 10px;
+    margin-right: 15px;
+    color: #fff;
+}
+.sns li:nth-child(1) a {
+    background-color: #1da1f2;
+}
+.sns li:nth-child(2) a {
+    background-color: #1877f2;
+}
+.sns li:nth-child(3) a {
+    background-color: #e1306c;
+}
+
+
+/* 말풍선 제너레이터 연결 
+https://cssarrowplease.com/*/
+
+.sns h2 {
+	position: relative;
+	background: #ddd;
+}
+.sns h2:after {
+	top: 100%;
+	left: 20%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(221, 221, 221, 0);
+	border-top-color: #ddd;
+	border-width: 15px;
+	margin-left: -15px;
+}
+
+
 /* 푸터 설정 */
 
 .box5 {
@@ -106,6 +256,39 @@ img {
 .box3 {}
 .box4 {padding: 15px 10px;}
 .box5 {}
+.box4-1 {
+    padding: 10px 0;
+}
+.box4-2 {
+    padding: 10px 0;
+}
+.box6 {
+    padding-top: 25px;
+}
+.box6>div {
+    padding-bottom: 5px;
+}
+
+
+/* menuBtn 설정 */
+.menuBtn {
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+.menuBtn i {
+    font-size: 18px;
+}
+
+
+/* 메뉴를 토글을 클릭했을 때만 보이게 하는 설정 */
+.gnb {
+    display: none;
+}
+
 
 
 
@@ -137,6 +320,39 @@ img {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    flex-direction: row;
+}
+
+/* 박스4-1과 박스4-2의 가로정렬 */
+.box4 {
+    display: flex;
+}
+.box4-1 {
+    width: 70%;
+    padding-right: 35px;
+    box-sizing: border-box;
+}
+.box4-2 {
+    width: 30%;
+}
+
+/* 콘텐츠1,2,3 가로정렬 */
+.box6 {
+    display: flex;
+    justify-content: space-between;
+}
+.box6>div {
+    width: 32%;
+}
+
+/* menuBtn */
+.menuBtn {
+    display: none;
+}
+
+/* 메뉴를 토글을 클릭했을 때만 보이게 하는 설정 */
+.gnb {
+    display: block !important;
 }
 }
 
@@ -144,7 +360,7 @@ img {
 /* 와이드데스크탑 설정 */
 @media (min-width:1280px) {
     /* 전체 너비 설정 */
-    .boxA, .copyright, .box3, .box4 {
+    .boxA, .copyright, .box3, .box4, .box6 {
         width: 1140px;
         margin: 0 auto;
     }
