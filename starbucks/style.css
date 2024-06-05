@@ -1,0 +1,22 @@
+/* 언어 설정 */
+@charset 'utf-8';
+
+
+/* 전체 설정 */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    vertical-align: bottom;
+}
+
+
+/*  */
