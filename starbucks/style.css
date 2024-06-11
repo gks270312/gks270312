@@ -450,6 +450,60 @@ section:nth-child(6) {
     padding: 40px 0;
     background-attachment: fixed;
 }
+.pickup_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pickup_inner .txtBox {
+    width: 40%;
+    text-align: right;
+    color: #fff;
+}
+.pickup_inner .txtBox .topTxt {
+    display: flex;
+    flex-direction: column;
+    font-size: 45px;
+    margin-bottom: 30px;
+    letter-spacing: 11px;
+}
+.pickup_inner .txtBox .topTxt em {
+    font-size: 100px;
+    font-weight: bold;
+    letter-spacing: 20px;
+    line-height: 50px;
+    transform: skewX(14deg);
+}
+.pickup_inner .txtBox .topTxt b {
+    font-size: 80px;
+    letter-spacing: 17px;
+}
+.pickup_inner .bottomTxt {
+    font-size: 14px;
+    margin-bottom: 30px;
+    
+}
+.pickup_inner .bottomTxt h3 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+.pickup_inner .txtBox span {}
+.pickup_inner .txtBox span a {
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: all 0.5s;
+}
+.pickup_inner .txtBox span a:hover {
+    background-color: #fff;
+    color: #111;
+    text-decoration: underline;
+}
+.pickup_inner .imgBox {
+    width: 60%;
+}
 
 
 
