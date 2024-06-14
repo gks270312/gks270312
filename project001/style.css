@@ -1,0 +1,1029 @@
+/* 언어 설정 */
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap');
+
+/* 구글폰트 정보
+font-family: "Hahmlet", serif; */
+
+
+/* 전체 설정 */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    vertical-align: bottom;
+}
+body {}
+
+
+/* 기본 레이아웃 설정 */
+.section1 {
+    background-color: #ddd;
+    height: 900px;
+}
+.section2 {
+
+    height: 350px;
+}
+.section3 {
+    background-color: #ccc;
+    height: 900px;
+}
+.section4 {
+    background-color: #bbb;
+    height: 760px;
+}
+.section5 {
+    background-color: #aaa;
+    height: 710px;
+}
+.section6 {
+    background-color: #999;
+    height: 1000px;
+}
+.section7 {
+    background-color: #888;
+    height: 900px;
+}
+footer {
+    background-color: #777;
+    height: 250px;
+}
+
+
+/* section1 설정 */
+header {
+    display: flex;
+    position: absolute;
+    width: 95%;
+    height: 100px;
+    z-index: 999;
+    border-bottom: 1px solid #fff;
+}
+header h1 {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header h1 a {}
+header h1 a img {
+    width: 90px;
+    height: auto;
+}
+
+header nav {
+    width: 85%;
+    display: flex;
+}
+header nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+header nav li {}
+header nav a {
+    display: block;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    transition: all 0.1s;
+}
+header nav li:hover a {
+    border-bottom: 2px solid #fff;
+}
+
+header .util {
+    position: absolute;
+    right: 30px;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin-top: 10px;
+}
+header .util .language {}
+header .util .language a {
+    display: block;
+    color: #fff;
+    font-size: 15px;
+}
+header .util .language i {
+    margin-right: 5px;
+    font-size: 16px;
+}
+header .sns {}
+header .sns ul {
+    display: flex;
+}
+header .sns li {}
+header .sns a {
+    color: #373737;
+    font-size: 15px;
+    font-weight: bold;
+    display: block;
+    padding: 1px 5px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background-color: #fff;
+    width: 15px;
+    height: 22px;
+    margin-left: 8px;
+}
+header .sns li:nth-child(1) span {
+    font-size: 10px;
+    margin-left: -3px;
+}
+header .sns i {
+    margin-left: 1px;
+}
+header .login a {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+}
+header .login i {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+
+.hero {
+    background-image: url(img/mainslide1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    width: 95%;
+    height: 900px;
+    border-bottom-right-radius: 300px;
+}
+.hero_txt {
+    position: absolute;
+    left: 220px;
+    top: 250px;
+}
+.hero_txt h4 {
+    font-size: 25px;
+    color: #fff;
+    font-family: "Hahmlet", serif;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+.hero_txt h1 {
+    font-size: 70px;
+    color: #fff;
+    font-family: "Hahmlet", serif;
+    font-weight: bold;
+    letter-spacing: 10px;
+    margin-bottom: 25px;
+}
+.hero_txt>div {
+    margin-bottom: 60px;
+}
+.hero_txt>div p {
+    font-size: 16px;
+    color: #fff;
+    font-family: "Hahmlet", serif;
+    font-weight: normal;
+}
+.hero_txt span {}
+.hero_txt span a {
+    display: block;
+    font-size: 17px;
+    color: #fff;
+    border: solid 1px #fff;
+    border-bottom-right-radius: 20px;
+    font-weight: bold;
+    padding: 12px 35px;
+    width: 70px;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 0.5s;
+}
+.hero_txt span a:hover {
+    background-color: #fff;
+    color: #394631;
+}
+.hero .prevBtn {
+    position: absolute;
+    left: 10px;
+    top: 47%;
+}
+.hero .prevBtn a {
+    display: block;
+    color: #fff;
+}
+.hero .prevBtn i {
+    font-size: 40px;
+}
+.hero .nextBtn {
+    position: absolute;
+    right: 10px;
+    top: 47%;
+}
+.hero .nextBtn a {
+    display: block;
+    color: #fff;
+}
+.hero .nextBtn i {
+    font-size: 40px;
+}
+
+.hero .slideBtn {
+    position: absolute;
+    display: flex;
+    width: 120px;
+    justify-content: space-between;
+    left: 45%;
+    bottom: 10px;
+}
+.hero .slideBtn div:nth-child(1) {
+    background-color: #394631;
+    width: 20px;
+    height: 20px;
+    border: #fff;
+    border-radius: 50%;
+}
+.hero .slideBtn div:nth-child(2) {
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    border: #fff;
+    border-radius: 50%;
+}
+.hero .slideBtn div:nth-child(3) {
+    background-color: #fff;
+    width: 20px;
+    height: 20px;
+    border: #fff;
+    border-radius: 50%;
+}
+.hero .slideBtn div:nth-child(4) {
+    margin-left: 15px;
+}
+.hero .slideBtn div:nth-child(4) i {
+    color: #fff;
+    font-size: 22px;
+}
+
+
+/* section2 설정 */
+.section2 {}
+.section2_inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.service {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.service p {
+    color: #B2DD98;
+    font-size: 16px;
+}
+.service h2 {
+    color: #394631;
+    font-size: 40px;
+    font-family: "Hahmlet", serif;
+}
+
+.iconBox {
+    color: #373737;
+    width: 60%;
+}
+.iconBox ul {
+    display: flex;
+    justify-content: space-between;
+}
+.iconBox li {}
+.iconBox a {
+    display: block;
+    font-size: 22px;
+    text-align: center;
+    transition: all 0.5s;
+    position: relative;
+}
+.iconBox li:hover a{
+   transform: translateY(-20px);
+   color: #4A772F;
+}
+
+.iconBox li:hover i{
+   color: #B2DD98;
+}
+.iconBox i {
+    display: block;
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+.iconBox span {
+    background: linear-gradient(101deg,#b2dd98 0%, #fff199 90%);
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+}
+.iconBox .color1 {
+    left: 5px;
+    top: 25px;
+}
+.iconBox .color2 {
+    left: 55px;
+    top: 0;
+}
+.iconBox .color3 {
+    right: 65px;
+    top: 25px;
+}
+.iconBox .color4 {
+    top: 0;
+    right: 5px;
+}
+
+
+/* section3 설정 */
+.section3 {
+    background-color: #B7C9AC;
+}
+.section3_inner {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.section3 span {
+    font-size: 120px;
+    color: #EFFFE6;
+    opacity: 35%;
+    font-weight: bold;
+    position: absolute;
+    left: -80px;
+    top: -20px;
+}
+.section3 h1 {
+    z-index: 999;
+    text-align: center;
+    color: #394631;
+    font-family: "Hahmlet", serif;
+    font-size: 48px;
+    font-weight: bold;
+    padding: 15px 0;
+    border-bottom: solid 2px #394631;
+    width: 500px;
+    height: 65px;
+    margin-top: 60px;
+}
+.section3 p {
+    text-align: center;
+    color: #EFFFE6;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.section3 .centerBox {
+    display: flex;
+    margin-top: 40px;
+    width: 100%;
+    height: 100%;
+}
+.section3 .imgBox {
+    background-color: #fff;
+    width: 55%;
+    height: 470px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    box-shadow: 5px 5px 10px gray;
+}
+.section3 .imgBox .big {}
+.section3 .imgBox .big p {}
+.section3 .imgBox .big p img {
+    width: 400px;
+    height: 380px;
+    border-radius: 10px;
+    border-bottom-right-radius: 50px;
+}
+.section3 .imgBox .thumb {}
+.section3 .imgBox .thumb li {
+    padding: 5px 0;
+    margin-left: 20px;
+}
+.section3 .imgBox .thumb li img {
+    width: 160px;
+    height: 120px;
+    border-radius: 5px;
+}
+.section3 .reserBox {
+    background-color: #fff;
+    border-radius: 20px;
+    width: 45%;
+    height: 470px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section3 .reserBox form {
+    width: 100%;
+}
+.section3 .reserBox ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+}
+.section3 .reserBox li {
+    display: flex;
+    width: 100%;
+}
+.section3 .reserBox li label {
+    text-align: center;
+    width: 40%;
+    border-right: 1px solid #ACACAC;
+    color: #373737;
+    font-size: 21px;
+    font-weight: bold;
+}
+.section3 .reserBox li input {
+    width: 40%;
+    margin-left: 50px;
+    border: none;
+    background-color: #DBE4D5;
+}
+.section3 .reserBox li select {
+    width: 40%;
+    margin-left: 50px;
+    border: none;
+    background-color: #DBE4D5;
+}
+.section3 .reserBox div {
+    margin-top: 50px;
+    text-align: center;
+}
+.section3 .reserBox div input {
+    background-color: #4A772F;
+    color: #fff;
+    font-size: 23px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    padding: 7px 30px;
+}
+
+
+/* section4 설정 */
+.section4 {
+    background-color: #fff;
+}
+.section4_inner {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    height: 100%;
+}
+.section4 .span1 {
+    color: #DBE4D5;
+    font-size: 120px;
+    font-weight: bold;
+    position: absolute;
+    right: 17%;
+    top: 25px;
+}
+.section4 h1 {
+    z-index: 999;
+    text-align: center;
+    color: #394631;
+    font-family: "Hahmlet", serif;
+    font-size: 48px;
+    font-weight: bold;
+    margin: 100px 0;
+    padding: 15px 0;
+    border-bottom: solid 2px #394631;
+    width: 500px;
+    height: 65px;
+}
+.section4 .span2 {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #DBE4D5;
+    position: absolute;
+    right: -17px;
+    top: 23%;
+}
+.section4 .span3 {
+    position: absolute;
+    right: 0;
+    top: 23%;
+}
+.section4 .span3 a {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #394631;
+}
+.section4 .span3 i {
+    font-size: 22px;
+    margin-left: 10px;
+    transition: all 0.5s;
+}
+.section4 .span3 a:hover i {
+    transform: translateX(10px);
+}
+.section4 .news {}
+.section4 .news ul {
+    display: flex;
+    width: 1500px;
+    justify-content: space-between;
+}
+.section4 .news li {
+    border: solid 2px #FFEB66;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 5px 5px 10px gray;
+    transition: all 0.5s;
+}
+.section4 .news li:hover {
+    background-color: #FFF199;
+}
+.section4 .news a {
+    display: block;
+    padding: 40px;
+}
+.section4 .news p {}
+.section4 .news li a p:nth-child(1) {
+    font-size: 20px;
+    font-weight: bold;
+    color: #373737;
+}
+.section4 .news li a p:nth-child(2) {
+    font-size: 16px;
+    color: #555555;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.section4 .news li a p:nth-child(3) {
+    font-size: 14px;
+    color: #555555;
+}
+
+
+/* section5 설정 */
+.section5 {
+    background-color: #B7C9AC;
+}
+.section5_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+.section5 .span1 {
+    font-size: 120px;
+    color: #EFFFE6;
+    opacity: 35%;
+    font-weight: bold;
+    position: absolute;
+    left: 16%;
+    top: -20px;
+}
+.section5 h1 {
+    z-index: 999;
+    text-align: center;
+    color: #394631;
+    font-family: "Hahmlet", serif;
+    font-size: 48px;
+    font-weight: bold;
+    margin: 70px 0;
+    padding: 15px 0;
+    border-bottom: solid 2px #394631;
+    width: 500px;
+    height: 65px;
+}
+.section5 .span2 {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #EFFFE6;
+    opacity: 35%;
+    position: absolute;
+    right: -17px;
+    top: 21%;
+}
+.section5 .span3 {
+    position: absolute;
+    right: 0;
+    top: 21%;
+}
+.section5 .span3 a {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #394631;
+}
+.section5 .span3 i {
+    font-size: 22px;
+    margin-left: 10px;
+    transition: all 0.5s;
+}
+.section5 .span3 a:hover i {
+    transform: translateX(10px);
+}
+.section5 .gallery {
+    margin-top: 30px;
+}
+.section5 .gallery ul {
+    display: flex;
+    align-items: center;
+}
+.section5 .gallery li {}
+.section5 .gallery li:hover img {
+    width: 380px;
+    height: 280px;
+}
+.section5 .gallery a {
+    display: block;
+    padding: 20px;
+}
+.section5 .gallery img {
+    width: 290px;
+    height: 210px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 5px 5px 10px gray;
+    transition: all 0.5s;
+}
+.section5 .gallery li:nth-child(3) img {
+    width: 380px;
+    height: 280px;
+}
+.section5 .Btn {}
+.section5 .Btn .prevBtn {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    text-align: center;
+    position: absolute;
+    left: -25%;
+    top: 57%;
+    transition: all 0.3s;
+}
+.section5 .Btn .prevBtn:hover {
+    background-color: #fff;
+}
+.section5 .Btn a {
+    font-size: 35px;
+    color: #394631;
+}
+.section5 .Btn .nextBtn {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    text-align: center;
+    position: absolute;
+    right: -25%;
+    top: 57%;
+    transition: all 0.3s;
+}
+.section5 .Btn .nextBtn:hover {
+    background-color: #fff;
+}
+
+
+/* section6 설정 */
+.section6 {
+    background-color: #fff;
+}
+.section6_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+.section6 span {
+    color: #DBE4D5;
+    font-size: 120px;
+    font-weight: bold;
+    position: absolute;
+    right: -25%;
+    top: 25px;
+}
+.section6 h1 {
+    z-index: 999;
+    text-align: center;
+    color: #394631;
+    font-family: "Hahmlet", serif;
+    font-size: 48px;
+    font-weight: bold;
+    margin: 100px 0;
+    padding: 15px 0;
+    border-bottom: solid 2px #394631;
+    width: 500px;
+    height: 65px;
+}
+.section6 .gallery {
+    width: 100%;
+}
+.section6 .gallery ul {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.section6 .gallery li {
+    width: 280px;
+    height: 500px;
+}
+.section6 .gallery li:nth-child(1) {
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(img/info1.jpg);
+    background-size: cover;
+    background-position: 75%;
+}
+.section6 .gallery li:nth-child(2) {
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(img/info2.png);
+    background-size: cover;
+    background-position: 20%;
+}
+.section6 .gallery li:nth-child(3) {
+    background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(img/info3.jpg);
+    background-size: cover;
+    background-position: 20%;
+}
+.section6 .gallery li:nth-child(1):hover {
+    background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), url(img/info1.jpg);
+}
+.section6 .gallery li:nth-child(2):hover {
+    background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), url(img/info2.png);
+}
+.section6 .gallery li:nth-child(3):hover {
+    background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,0)), url(img/info3.jpg);
+}
+.section6 .gallery li:hover p {
+    color: #fff;
+}
+.section6 .gallery a {
+    display: flex;
+    flex-direction: column;
+    height: 430px;
+    justify-content: flex-end;
+    margin-left: 25px;
+}
+.section6 .gallery h2 {
+    font-size: 55px;
+    color: #394631;
+    position: absolute;
+}
+.section6 .gallery li:nth-child(1) h2 {
+    left: 3%;
+    top: 26%;
+}
+.section6 .gallery li:nth-child(2) h2 {
+    left: 37%;
+    top: 26%;
+}
+.section6 .gallery li:nth-child(3) h2 {
+    right: 25%;
+    top: 26%;
+}
+.section6 .gallery h4 {
+    font-size: 25px;
+    color: #373737;
+}
+.section6 .gallery p {
+    font-size: 16px;
+    color: #555555;
+    margin-top: 35px;
+}
+
+
+/* section7 설정 */
+.section7 {
+    background-image:  linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url(img/directions.jpg);
+    background-size: cover;
+    border-top-left-radius: 300px;
+    position: relative;
+}
+.section7_inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+.section7 .span1 {
+    color: #DBE4D5;
+    font-size: 120px;
+    font-weight: bold;
+    position: absolute;
+    left: -10%;
+    top: -11%;
+}
+.section7 h1 {
+    z-index: 999;
+    text-align: center;
+    color: #394631;
+    font-family: "Hahmlet", serif;
+    font-size: 48px;
+    font-weight: bold;
+    margin: 80px 0;
+    padding: 15px 0;
+    border-bottom: solid 2px #394631;
+    width: 500px;
+    height: 65px;
+}
+.section7 .sideBox {
+    width: 260px;
+    height: 100%;
+    background-color: #4A772F;
+    opacity: 40%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.section7 .centerBox {
+    display: flex;
+}
+.section7 .map {
+    width: 45%;
+    margin-right: 15px;
+}
+.section7 .map .top {
+    width: 550px;
+    height: 500px;
+    background-color: #999;
+}
+.section7 .map .bottom {}
+.section7 .map .bottom p {
+    font-size: 14px;
+}
+.section7 .map .bottom span {
+    font-weight: bold;
+}
+.section7 .mapInfo {
+    width: 55%;
+    background-color: #fff;
+    width: 650px;
+    height: 500px;
+    margin-left: 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    box-sizing: border-box;
+}
+.section7 .mapInfo .topInfo {
+    border-bottom: 1px dotted #ACACAC;
+    padding-bottom: 30px;
+}
+.section7 .mapInfo h4 {
+    font-size: 24px;
+    color: #373737;
+    margin-bottom: 25px;
+}
+.section7 .mapInfo h4 i {
+    color: #394631;
+    font-size: 24px;
+    margin-right: 8px;
+}
+.section7 .mapInfo .topInfo div {
+    display: flex;
+}
+.section7 .mapInfo h5 {
+    width: 115px;
+    text-align: center;
+    font-size: 17px;
+    color: #373737;
+    border: 1px solid #ACACAC;
+    padding: 7px 20px;
+    border-radius: 50px;
+    margin-bottom: 13px;
+}
+.section7 .mapInfo .bottomInfo .termin {
+    height: 50px;
+}
+.section7 .mapInfo p {
+    font-size: 16px;
+    color: #555555;
+    padding: 7px 20px;
+}
+.section7 .mapInfo .topInfo p i {
+    font-size: 13px;
+    margin-left: 5px;
+}
+.section7 .mapInfo .bottomInfo p i {
+    font-size: 13px;
+    margin-right: 5px;
+}
+.section7 .mapInfo .bottomInfo {}
+.section7 .mapInfo .bottomInfo div {
+    display: flex;
+}
+
+
+/* footer 설정 */
+.footer {
+    background-color: #484848;
+}
+.footer_inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.footer .privacy {
+    height: 30%;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    border-bottom: 1px solid #ACACAC;
+}
+.footer .privacy ul {
+    display: flex;
+}
+.footer .privacy li {}
+.footer .privacy li:nth-child(1) a {
+    border-right: 1px solid #ACACAC;
+}
+.footer .privacy li:nth-child(2) a {
+    border-right: 1px solid #ACACAC;
+}
+.footer .privacy a {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0 30px;
+}
+.footer .copyright {
+    height: 60%;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 50px;
+    padding-top: 25px;
+    justify-content: space-between;
+}
+.footer .copyright div {
+    padding: 0 30px;
+}
+.footer .copyright div p {
+    color: #ACACAC;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 25px;
+}
+.footer .copyright div img {
+    width: 90px;
+    height: auto;
+    opacity: 0.6;
+}
+
+
+
+
+
+
+
+
+
+/* 미디어쿼리 구간 설정 */
+
+/* 와이드데스크탑 구간 */
+@media(min-width:1280px) {
+     .section2_inner,
+     .section3_inner,
+     .section4_inner,
+     .section5_inner,
+     .section6_inner,
+     .section7_inner,
+     .footer_inner{
+        width: 1240px;
+        margin: 0 auto;
+    }
+}
