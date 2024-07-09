@@ -31,7 +31,7 @@ $(document).ready(function(){
     })
 
 
-    // menu_img의li를 클릭했을때, sub가 보인다.
+    // .menu_img li를 클릭했을 때, sub가 보인다.
 
     $('.menu_img li').click(function(e){
         e.preventDefault()

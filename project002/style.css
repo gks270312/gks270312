@@ -27,6 +27,7 @@ img {
 }
 body {
     font-family: "Noto Sans KR", sans-serif;
+    overflow-x: hidden;
 }
 
 
@@ -1133,6 +1134,7 @@ header {}
 .section5 .review_img li {
     width: 270px;
     overflow: hidden;
+    border-radius: 7px;
 }
 .section5 .review_img li:hover p {
     background-color: #C30E2F;
@@ -1147,8 +1149,6 @@ header {}
 .section5 .review_img div {
     width: 270px;
     height: 320px;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
     transition: all 0.5s;
     overflow: hidden;
 }
@@ -1190,8 +1190,6 @@ header {}
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
     transition: all 0.5s;
 }
 
@@ -1753,9 +1751,12 @@ footer .fourth p:nth-child(1) {
 
 /* review 설정 */
 .review {
+    width: 100%;
     height: 600px;
+    position: relative;
 }
 .review h3 {
+    width: 100%;
     height: 5%;
     font-size: 30px;
     font-weight: bold;
@@ -1770,10 +1771,27 @@ footer .fourth p:nth-child(1) {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: absolute;
 }
+.review .review1 {
+    left: 0;
+    animation: ani1 50s linear infinite;
+}
+.review .review2 {
+    left: 100%;
+    animation: ani2 50s linear infinite;
+}
+.review:hover .review1 {
+    animation-play-state: paused;
+}
+.review:hover .review2 {
+    animation-play-state: paused;
+}
+
 .review li {
     width: 270px;
     overflow: hidden;
+    border-radius: 7px;
 }
 .review li:hover p {
     background-color: #C30E2F;
@@ -1788,8 +1806,6 @@ footer .fourth p:nth-child(1) {
 .review div {
     width: 270px;
     height: 320px;
-    border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
     transition: all 0.5s;
     overflow: hidden;
 }
@@ -1831,8 +1847,6 @@ footer .fourth p:nth-child(1) {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
     transition: all 0.5s;
 }
 
