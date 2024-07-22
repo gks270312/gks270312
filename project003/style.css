@@ -1,0 +1,650 @@
+/* 언어 설정 */
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/*
+구글폰트
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  
+  font-family: "Alex Brush", cursive;
+  font-weight: 400;
+  font-style: normal;
+*/
+
+
+/* 전체 설정 */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+img {
+    vertical-align: bottom;
+}
+body {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+
+
+
+/* 로고설정 */
+h1 {
+    position: fixed;
+    font-size: 30px;
+    font-weight: bold;
+    color: #398AB9;
+    left: 30px;
+    top: 20px;
+    z-index: 99;
+    transition: all 1.5s;
+}
+h1 span {
+    display: inline-block;
+}
+
+h1.on {
+    top: 55%; 
+    left: 70px;
+    font-size: 130px;
+    line-height: 1;
+}
+h1.on span {
+    display: block;
+}
+
+
+
+
+/* 내비 설정 */
+nav {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    margin-top: -120px;
+    width: 220px;
+    height: 240px;
+    z-index: 99;
+}
+nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+nav li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #398AB9;
+    position: relative;
+    cursor: pointer;
+}
+nav div {
+    width: 70%;
+    text-align: right;
+    padding-right: 20px;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: all 0.6s;
+}
+nav li.on div {
+    opacity: 1;
+}
+nav li.on p {
+    border: 3px solid #398AB9;
+}
+nav li.on em {
+    opacity: 1;
+}
+nav li:hover div {
+    opacity: 1;
+}
+
+nav p {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #FCCF76;
+}
+nav em {
+    width: 50px;
+    height: 2px;
+    background-color: #398AB9;
+    opacity: 0;
+}
+
+
+
+
+/* section article 화면구조 설정 */
+section {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #aaa;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+section article {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all 1.8s;
+}
+
+section article:nth-child(1) {
+    left: 0;
+    top: 0;
+}
+section article:nth-child(2) {
+    left: -100%;
+    top: -100%;
+}
+section article:nth-child(3) {
+    left: 100%;
+    top: -100%;
+}
+section article:nth-child(4) {
+    background-color: lightgreen;
+    left: -100%;
+    top: 100%;
+}
+section article:nth-child(5) {
+    background-color: lightsalmon;
+    left: 100%;
+    top: 100%;
+}
+section article.on {
+    left: 0;
+    top: 0;
+}
+
+
+
+
+/* home 설정 */
+.home {
+    position: relative;
+    background-image: url(img/home.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.home p {
+    position: absolute;
+    right: 50px;
+    top: 23%;
+    font-family: "Alex Brush", cursive;
+    font-size: 50px;
+    color: #fff;
+    text-align: right;
+    line-height: 0.9;
+}
+.home i {
+    font-size: 35px;
+    animation: ani1 1s linear infinite;
+}
+
+@keyframes ani1 {
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(20px);
+    }
+}
+
+
+
+
+/* about 설정 */
+.about {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+/* about1 설정 */
+.about1 {
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/about01.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    background-attachment: fixed;
+}
+.about1 h2 {
+    font-size: 120px;
+    font-family: "Alex Brush", cursive;
+    font-weight: normal;
+    color: #FCCF76;
+    position: absolute;
+    right: 32%;
+    top: 26%;
+}
+.about1 .profile {
+    position: absolute;
+    width: 480px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.7);
+    right: 22%;
+    top: 43%;
+    box-shadow: 5px 5px 10px #aaa;
+    padding: 35px 50px;
+    box-sizing: border-box;
+}
+.about1 .profile h4 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #398AB9;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #bbb;
+}
+.about1 .profile h4 span {
+    font-size: 16px;
+    font-weight: normal;
+    margin-left: 30px;
+}
+.about1 .profile ul {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    height: 170px;
+    justify-content: space-between;
+}
+.about1 .profile li {
+    font-size: 20px;
+    font-weight: bold;
+    color: #398AB9;
+    display: flex;
+    justify-content: space-between;
+}
+.about1 .profile li span {
+    font-weight: normal;
+    color: #65A9C7;
+}
+.about1 .insta {
+    position: absolute;
+    width: 120px;
+    height: 38px;
+    background-color: #FCCF76;
+    right: 17%;
+    top: 45%;
+    text-align: center;
+    line-height: 2;
+    animation: ani2 2s infinite;
+}
+.about1 .insta a {
+    font-size: 18px;
+    color: #398AB9;
+}
+
+.about1 .mouse {
+    width: 30px;
+    height: 60px;
+    border: 1px solid #398AB9;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+    bottom: 30px;
+}
+.about1 .scroll {
+    width: 8px;
+    height: 8px;
+    background-color: #2663A2;
+    border-radius: 50%;
+    margin-top: 15px;
+    animation: ani4 2s infinite;
+}
+
+@keyframes ani2 {
+    0%{
+        transform: rotate(0deg);
+    }
+    10%{
+        transform: rotate(-10deg);
+    }
+    20%{
+        transform: rotate(10deg);
+    }
+    30%{
+        transform: rotate(-10deg);
+    }
+    40%{
+        transform: rotate(10deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes ani4 {
+    0%{
+        transform: translateY(0px);
+    }
+    100%{
+        transform: translateY(25px);
+    }
+}
+
+
+
+
+/* about2 설정 */
+.about2 {
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/about02.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left top;
+    position: relative;
+}
+.about2 h2 {
+    font-size: 120px;
+    font-family: "Alex Brush", cursive;
+    font-weight: normal;
+    color: #FCCF76;
+    position: absolute;
+    left: 13%;
+    top: 33%;
+}
+.about2 .awards {
+    position: absolute;
+    width: 550px;
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.7);
+    left: 14%;
+    top: 48%;
+    box-shadow: 5px 5px 10px #aaa;
+    padding: 35px 50px;
+    box-sizing: border-box;
+}
+.about2 .awards ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.about2 .awards li {
+    font-size: 18px;
+    font-weight: bold;
+    color: #398AB9;
+}
+.about2 .awards li span {
+    font-size: 18px;
+    font-weight: normal;
+    color: #65A9C7;
+    margin-right: 25px;
+}
+.about2 .watch {
+    position: absolute;
+    width: 220px;
+    height: 38px;
+    background-color: #FCCF76;
+    left: 40%;
+    bottom: 26%;
+}
+.about2 .watch a {
+    height: 100%;
+    font-size: 18px;
+    color: #398AB9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.about2 .watch a i {
+    font-size: 30px;
+    color: red;
+    margin-right: 10px;
+    animation: ani3 1.2s infinite;
+}
+
+@keyframes ani3 {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+
+
+/* gal 설정 */
+.gal {}
+.gal_inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #AACADD;
+}
+
+/* gal_img 설정 */
+.gal_img {
+    width: 1500px;
+    height: 690px;
+    position: absolute;
+    left: 8%;
+    top: 10%;
+}
+.gal_img>div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+.gal_img>div.on {
+    display: flex;
+}
+
+.gal_img>div>p {
+    transition: all 1.5s;
+}
+
+.gal_img .gal_img1 {}
+.gal_img .gal_img1 p {
+    background-size: cover;
+    background-position: center center;
+}
+.gal_img .gal_img1 p:nth-child(1) {
+    width: 450px;
+    height: 400px;
+    background-image: url(img/gallery_screen01.png);
+}
+.gal_img .gal_img1 p:nth-child(2) {
+    width: 450px;
+    height: 360px;
+    background-image: url(img/gallery_screen02.jpg);
+}
+.gal_img .gal_img1 p:nth-child(3) {
+    width: 600px;
+    height: 360px;
+    background-image: url(img/gallery_screen03.jpg);
+}
+.gal_img .gal_img1 p:nth-child(4) {
+    width: 225px;
+    height: 290px;
+    background-image: url(img/gallery_screen04.png);
+}
+.gal_img .gal_img1 p:nth-child(5) {
+    width: 225px;
+    height: 290px;
+    background-image: url(img/gallery_screen05.png);
+}
+.gal_img .gal_img1 p:nth-child(6) {
+    width: 600px;
+    height: 330px;
+    margin-top: -40px;
+    background-image: url(img/gallery_screen06.jpg);
+}
+.gal_img .gal_img1 p:nth-child(7) {
+    width: 450px;
+    height: 330px;
+    margin-top: -40px;
+    background-image: url(img/gallery_screen07.jpg);
+}
+
+.gal_img .gal_img2 {}
+.gal_img .gal_img2 p {
+    background-size: cover;
+    background-position: center center;
+}
+.gal_img .gal_img2 p:nth-child(1) {
+    width: 375px;
+    height: 345px;
+    background-image: url(img/gallery_megazine01.jpg);
+    background-position: center 40%;
+}
+.gal_img .gal_img2 p:nth-child(2) {
+    width: 375px;
+    height: 345px;
+    background-image: url(img/gallery_megazine02.jpg);
+    background-position: center 10%;
+}
+.gal_img .gal_img2 p:nth-child(3) {
+    width: 750px;
+    height: 345px;
+    background-image: url(img/gallery_megazine03.png);
+    background-position: center center;
+}
+.gal_img .gal_img2 p:nth-child(4) {
+    width: 375px;
+    height: 345px;
+    background-image: url(img/gallery_megazine04.jpg);
+    background-position: center 80%;
+}
+.gal_img .gal_img2 p:nth-child(5) {
+    width: 375px;
+    height: 345px;
+    background-image: url(img/gallery_megazine05.jpg);
+    background-position: center 20%;
+}
+.gal_img .gal_img2 p:nth-child(6) {
+    width: 250px;
+    height: 345px;
+    background-image: url(img/gallery_megazine06.jpg);
+}
+.gal_img .gal_img2 p:nth-child(7) {
+    width: 250px;
+    height: 345px;
+    background-image: url(img/gallery_megazine07.jpg);
+}
+.gal_img .gal_img2 p:nth-child(8) {
+    width: 250px;
+    height: 345px;
+    background-image: url(img/gallery_megazine08.png);
+}
+
+.gal_img .gal_img3 {}
+.gal_img .gal_img3 p {
+    background-size: cover;
+    background-position: center center;
+}
+.gal_img .gal_img3 p:nth-child(1) {
+    width: 450px;
+    height: 345px;
+    background-image: url(img/gallery_daily01.jpg);
+    background-position: center 80%;
+}
+.gal_img .gal_img3 p:nth-child(2) {
+    width: 450px;
+    height: 345px;
+    background-image: url(img/gallery_daily02.jpg);
+    background-position: center 20%;
+}
+.gal_img .gal_img3 p:nth-child(3) {
+    width: 300px;
+    height: 345px;
+    background-image: url(img/gallery_daily03.jpg);
+}
+.gal_img .gal_img3 p:nth-child(4) {
+    width: 300px;
+    height: 345px;
+    background-image: url(img/gallery_daily04.jpg);
+}
+.gal_img .gal_img3 p:nth-child(5) {
+    width: 450px;
+    height: 345px;
+    background-image: url(img/gallery_daily05.png);
+    background-position: center 40%;
+}
+.gal_img .gal_img3 p:nth-child(6) {
+    width: 450px;
+    height: 345px;
+    background-image: url(img/gallery_daily06.jpg);
+    background-position: center top;
+}
+.gal_img .gal_img3 p:nth-child(7) {
+    width: 300px;
+    height: 345px;
+    background-image: url(img/gallery_daily07.jpg);
+}
+.gal_img .gal_img3 p:nth-child(8) {
+    width: 300px;
+    height: 345px;
+    background-image: url(img/gallery_daily08.jpg);
+    background-position: center 95%;
+}
+
+
+
+
+/* gal_menu 설정 */
+.gal_menu {
+    position: absolute;
+    left: 8%;
+    bottom: 5%;
+}
+.gal_menu ul {
+    display: flex;
+}
+.gal_menu li {
+    color: #fff;
+    font-size: 35px;
+    font-family: "Alex Brush", cursive;
+    cursor: pointer;
+    width: 170px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+.gal_menu li.on {
+    background-color: #2663A2;
+}
