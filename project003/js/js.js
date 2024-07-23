@@ -71,7 +71,10 @@ $(document).ready(function(){
         var c = $(this).index()
 
         $('.gal_menu li').removeClass('on')
+        $('.gal_menu li').removeClass('on2')
         $('.gal_menu li').eq(c).addClass('on')
+
+        $('.gal_inner').addClass('on')
 
    
         $('.gal_img>div').removeClass('on')
@@ -84,14 +87,64 @@ $(document).ready(function(){
             },10);
         // $('.gal_img>div>p').css({'transform':'rotateY(0deg)'}).stop().animate({'transform':'rotateY(360deg)'})
     
-    
-        if(c==1){
-            $('.gal_inner').css({'background-color':'#F8E6C2'})
-            $(this).css({'background-color':'#FF9567'})
-        }else{
-            $('.gal_inner').css({'background-color':'#AACADD'})
-            $(this).css({'background-color':'#2663A2'})
-        }
+    })
+
+
+
+
+    // .gal_menu 두 번째 li를 클릭했을 때,
+    $('.gal_menu li').eq(1).click(function(){
+
+        $(this).removeClass('on')
+        $(this).addClass('on2')
+
+        $('.gal_inner').removeClass('on')
+    })
+
+
+
+
+    // 스크롤값을 찾아서 .filmo_img ul의 left값에 대입한다.
+    $(window).scroll(function(){
+
+        var sc = $(window).scrollTop()
+        // console.log(sc)
+        // $('.body').addClass('on')
+        $('.filmo_img ul').css({'left':-sc})
+    })
+
+    $('nav li').eq(3).click(function(){
+
+        $('body').addClass('on')
+    })
+
+
+
+
+    // .filmo_img li를 클릭했을 때,
+    // 1. 순번을 찾고
+    // 2. 순번에 맞게 .filmo_info li에 addClass
+    $('.filmo_img li').click(function(){
+
+        var d = $(this).index()
+
+        $('.filmo_info li').removeClass('on')
+        $('.filmo_info li').eq(d).addClass('on')
+    })
+
+
+
+
+    // .videoBox .video_menu li를 클릭했을 때,
+    // 1. 순번을 찾고
+    // 2. 순번에 맞게 .videoBox .video_play iframe에 addClass
+    $('.videoBox .video_menu li').click(function(){
+
+        var f = $(this).index()
+
+        $('.videoBox .video_play iframe').removeClass('on')
+        $('.videoBox .video_play iframe').eq(f).addClass('on')
+
     })
 
 })
