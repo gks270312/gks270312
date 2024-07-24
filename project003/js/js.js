@@ -8,7 +8,7 @@ $(document).ready(function(){
     $('nav li').click(function(){
 
         var a = $(this).index()
-        console.log(a)
+        // console.log(a)
 
         $('section article').removeClass('on')
         $('section article').eq(a).addClass('on')
@@ -63,8 +63,7 @@ $(document).ready(function(){
     // .gal_menu li를 클릭했을 때,
     // 1. 순번을 찾고
     // 2. 순번에 맞게 .gal_menu li에 addClass
-    // 3. 순번에 맞게 .gal_img>div에 addCalss
-    // 4. .gal_img>div>p가 rotate360deg
+    // 3. 순번에 맞게 .gal_img>div에 addClass
 
     $('.gal_menu li').click(function(){
 
@@ -81,10 +80,10 @@ $(document).ready(function(){
         $('.gal_img>div').eq(c).addClass('on')
 
 
-        $('.gal_img>div>p').css({'transform':'rotateY(0deg)'});
-            setTimeout(function(){
-            $('.gal_img>div.on>p').css({'transform':'rotateY(360deg)'});
-            },10);
+        // $('.gal_img>div>p').css({'transform':'rotateY(0deg)'});
+        //     setTimeout(function(){
+        //     $('.gal_img>div.on>p').css({'transform':'rotateY(360deg)'});
+        //     },10);
         // $('.gal_img>div>p').css({'transform':'rotateY(0deg)'}).stop().animate({'transform':'rotateY(360deg)'})
     
     })
@@ -104,32 +103,38 @@ $(document).ready(function(){
 
 
 
-    // 스크롤값을 찾아서 .filmo_img ul의 left값에 대입한다.
+    // 스크롤값을 찾아서 .filmo_center ul의 left값에 대입한다.
     $(window).scroll(function(){
 
-        var sc = $(window).scrollTop()
-        // console.log(sc)
-        // $('.body').addClass('on')
-        $('.filmo_img ul').css({'left':-sc})
+        var sc = $(this).scrollTop()
+        console.log(sc)
+        $('.about>h2').text(sc)
+        $('.filmo_center ul').css({'left':-sc})
     })
+
 
     $('nav li').eq(3).click(function(){
 
         $('body').addClass('on')
     })
+    $('nav li').eq(1).click(function(){
+
+        $('body').removeClass('on')
+    })
 
 
 
 
-    // .filmo_img li를 클릭했을 때,
+
+    // .filmo_center li를 클릭했을 때,
     // 1. 순번을 찾고
-    // 2. 순번에 맞게 .filmo_info li에 addClass
-    $('.filmo_img li').click(function(){
+    // 2. 순번에 맞게 .filmo_center li>div에 addClass
+    $('.filmo_center li').click(function(){
 
         var d = $(this).index()
 
-        $('.filmo_info li').removeClass('on')
-        $('.filmo_info li').eq(d).addClass('on')
+        $('.filmo_center li>div').removeClass('on')
+        $('.filmo_center li:nth-child('+(d+1)+')>div').addClass('on')
     })
 
 
@@ -138,6 +143,7 @@ $(document).ready(function(){
     // .videoBox .video_menu li를 클릭했을 때,
     // 1. 순번을 찾고
     // 2. 순번에 맞게 .videoBox .video_play iframe에 addClass
+    // 3. 순번에 맞게 자신에게 addClass
     $('.videoBox .video_menu li').click(function(){
 
         var f = $(this).index()
@@ -145,6 +151,36 @@ $(document).ready(function(){
         $('.videoBox .video_play iframe').removeClass('on')
         $('.videoBox .video_play iframe').eq(f).addClass('on')
 
+        $('.videoBox .video_menu li').removeClass('on')
+        $(this).addClass('on')
+    })
+
+
+
+
+    // 윈도우에서 마우스가 움직일 때, x값과 y값을 찾아라.
+    $(window).mousemove(function(e){
+
+        var x = e.pageX;
+        var y = e.pageY;
+        // console.log(x)
+
+        // x를 .video .mouse의 left값에 적용하고,
+        // y를 .video .mouse의 top값에 적용한다.
+        // 이 때, 위치값을 잡아준다.
+        $('.video .mouse').css({'left':x-20,'top':y-20})
+
+
+        // .chick에 마우스가 들어갔을 때, .video .mouse에 addClass
+        $('.chick').mouseenter(function(){
+
+            $('.video .mouse').addClass('style1')
+        })
+
+        $('.chick').mouseleave(function(){
+
+            $('.video .mouse').removeClass('style1')
+        })
     })
 
 })
