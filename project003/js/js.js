@@ -4,7 +4,6 @@ $(document).ready(function(){
     // 1. 순번찾기
     // 2. 클릭한 순번에 맞게 article에게 addClass
     // 3. 클릭한 순번에 맞게 nav li에게 addClass
-
     $('nav li').click(function(){
 
         var a = $(this).index()
@@ -25,7 +24,6 @@ $(document).ready(function(){
 
         $('h1').addClass('on')
     })
-
 
     // // nav 두 번째 li를 클릭했을 때, h1에게 removeClass
     // $('nav li').eq(1).click(function(){
@@ -64,7 +62,6 @@ $(document).ready(function(){
     // 1. 순번을 찾고
     // 2. 순번에 맞게 .gal_menu li에 addClass
     // 3. 순번에 맞게 .gal_img>div에 addClass
-
     $('.gal_menu li').click(function(){
 
         var c = $(this).index()
@@ -85,7 +82,6 @@ $(document).ready(function(){
         //     $('.gal_img>div.on>p').css({'transform':'rotateY(360deg)'});
         //     },10);
         // $('.gal_img>div>p').css({'transform':'rotateY(0deg)'}).stop().animate({'transform':'rotateY(360deg)'})
-    
     })
 
 
@@ -107,21 +103,81 @@ $(document).ready(function(){
     $(window).scroll(function(){
 
         var sc = $(this).scrollTop()
-        console.log(sc)
-        $('.about>h2').text(sc)
+        // console.log(sc)
         $('.filmo_center ul').css({'left':-sc})
     })
 
 
+    // .nav 4번째 li를 클릭했을 때, body에 addClass
     $('nav li').eq(3).click(function(){
 
         $('body').addClass('on')
     })
+
+
+    // nav 2번째 li를 클릭했을 때,
+    // 1. body에 removeclass
+    // 2. .about1 .profile에 addClass
     $('nav li').eq(1).click(function(){
 
         $('body').removeClass('on')
+        $('.about1 .profile').addClass('on')
+    })
+    // nav 1번째 li를 클릭했을 때,
+    // 1. .about1 .profile에 removeClass
+    // 2. .about2 .awards에 removeClass
+    $('nav li').eq(0).click(function(){
+
+        $('.about1 .profile').removeClass('on')
+        $('.about2 .awards').removeClass('on')
+    })
+    // nav 3번째 li를 클릭했을 때,
+    // 1. .about1 .profile에 removeClass
+    // 2. .about2 .awards에 removeClass
+    $('nav li').eq(2).click(function(){
+
+        $('.about1 .profile').removeClass('on')
+        $('.about2 .awards').removeClass('on')
+    })
+    // nav 4번째 li를 클릭했을 때,
+    // 1. .about1 .profile에 removeClass
+    // 2. .about2 .awards에 removeClass
+    $('nav li').eq(3).click(function(){
+
+        $('.about1 .profile').removeClass('on')
+        $('.about2 .awards').removeClass('on')
+    })
+    // nav 5번째 li를 클릭했을 때,
+    // 1. .about1 .profile에 removeClass
+    // 2. .about2 .awards에 removeClass
+    $('nav li').eq(4).click(function(){
+
+        $('.about1 .profile').removeClass('on')
+        $('.about2 .awards').removeClass('on')
     })
 
+    // nav 1,3,4,5번째 li를 클릭했을 때, .about1 .profile에 removeClass
+    // for(var g=0; g<5; g++){
+    //     if(g=1) {continue;}
+
+    //     $('nav li').eq(g).click(function(){
+
+    //         $('.about .profile').removeClass('on')
+    //     })
+    // }
+
+    
+    //.about에서 스크롤값을 찾아서 .about2 .awards에 addClass 
+    $('.about').scroll(function(){
+        var asc = $(this).scrollTop()
+        // console.log(asc)
+        // $('.about>h2').text(asc)
+
+        if(asc>=650){
+
+            $('.about2 .awards').addClass('on')
+        }
+    })
 
 
 
