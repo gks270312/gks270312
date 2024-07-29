@@ -1,5 +1,39 @@
 $(document).ready(function(){
 
+    // 인트로화면이 나오자마자
+    // .intro_txt .intro_txt1,2,3에 addClass
+    $('.intro_txt .intro_txt1').addClass('on')
+    $('.intro_txt .intro_txt2').addClass('on')
+    $('.intro_txt .intro_txt3').addClass('on')
+
+
+
+
+
+    // video가 플레이 된 후 9.3초 후에 .intro에 addClass fadeout
+    $('video').on('play',function(){
+        setTimeout(function(){
+            $('.intro').addClass('fadeout')
+        },9300)
+    })
+
+
+
+
+    // h1을 클릭했을 때,
+    // 1. .intro에 addClass fadein
+    // 2. 영상 다시 재생
+    // 3. 다시 addClass fadeout
+    $('h1').on('click',function(){
+     
+        $('.intro').removeClass('fadeout').addClass('fadein')
+
+        $('video')[0].play()
+    })
+
+
+
+
     // nav li를 클릭했을 때,
     // 1. 순번찾기
     // 2. 클릭한 순번에 맞게 article에게 addClass
@@ -46,7 +80,7 @@ $(document).ready(function(){
     //     $('h1').removeClass('on')
     // })
 
-    // nav 2~5번째 li를 클릭했을 때, h1에게 removeClass
+    // (위 내용 반복문으로)nav 2~5번째 li를 클릭했을 때, h1에게 removeClass
     for(var b=1; b<5; b++){
 
         $('nav li').eq(b).click(function(){
@@ -75,13 +109,6 @@ $(document).ready(function(){
    
         $('.gal_img>div').removeClass('on')
         $('.gal_img>div').eq(c).addClass('on')
-
-
-        // $('.gal_img>div>p').css({'transform':'rotateY(0deg)'});
-        //     setTimeout(function(){
-        //     $('.gal_img>div.on>p').css({'transform':'rotateY(360deg)'});
-        //     },10);
-        // $('.gal_img>div>p').css({'transform':'rotateY(0deg)'}).stop().animate({'transform':'rotateY(360deg)'})
     })
 
 
@@ -108,20 +135,29 @@ $(document).ready(function(){
     })
 
 
-    // .nav 4번째 li를 클릭했을 때, body에 addClass
+
+
+    // .nav 4번째 li를 클릭했을 때
+    // 1. body에 addClass
+    // 2. scrollTop이 항상0
     $('nav li').eq(3).click(function(){
 
         $('body').addClass('on')
+        $('html,body').scrollTop(0)
     })
+
+
 
 
     // nav 2번째 li를 클릭했을 때,
     // 1. body에 removeclass
     // 2. .about1 .profile에 addClass
+    // 3. .about의 scrollTop이 항상0
     $('nav li').eq(1).click(function(){
-
+        
         $('body').removeClass('on')
         $('.about1 .profile').addClass('on')
+        $('.about').scrollTop(0)
     })
     // nav 1번째 li를 클릭했을 때,
     // 1. .about1 .profile에 removeClass
@@ -134,10 +170,12 @@ $(document).ready(function(){
     // nav 3번째 li를 클릭했을 때,
     // 1. .about1 .profile에 removeClass
     // 2. .about2 .awards에 removeClass
+    // 3. .gal_menu 첫 번째 li를 클릭한 것 같은 trigger
     $('nav li').eq(2).click(function(){
 
         $('.about1 .profile').removeClass('on')
         $('.about2 .awards').removeClass('on')
+        $('.gal_menu li').eq(0).trigger('click')
     })
     // nav 4번째 li를 클릭했을 때,
     // 1. .about1 .profile에 removeClass
@@ -150,10 +188,12 @@ $(document).ready(function(){
     // nav 5번째 li를 클릭했을 때,
     // 1. .about1 .profile에 removeClass
     // 2. .about2 .awards에 removeClass
+    // 3. .videoBox .video_menu 첫 번째 li를 클릭한 것 같은 trigger
     $('nav li').eq(4).click(function(){
 
         $('.about1 .profile').removeClass('on')
         $('.about2 .awards').removeClass('on')
+        $('.videoBox .video_menu li').eq(0).trigger('click')
     })
 
     // nav 1,3,4,5번째 li를 클릭했을 때, .about1 .profile에 removeClass
@@ -175,7 +215,13 @@ $(document).ready(function(){
 
         if(asc>=650){
 
+            // 화면을 내리면 .profile 없애고, .awards 생기게 하고
+            $('.about1 .profile').removeClass('on')
             $('.about2 .awards').addClass('on')
+        }else{
+            // 화면을 올리면 .awards 없애고, .profile 생기게 하고
+            $('.about2 .awards').removeClass('on')
+            $('.about1 .profile').addClass('on')
         }
     })
 
@@ -225,18 +271,20 @@ $(document).ready(function(){
         // y를 .video .mouse의 top값에 적용한다.
         // 이 때, 위치값을 잡아준다.
         $('.video .mouse').css({'left':x-20,'top':y-20})
+    })
+    
+    
+    
+    
+    // .chick에 마우스가 들어갔을 때, .video .mouse에 addClass
+    $('.chick').mouseenter(function(){
 
+        $('.video .mouse').addClass('style1')
+    })
 
-        // .chick에 마우스가 들어갔을 때, .video .mouse에 addClass
-        $('.chick').mouseenter(function(){
+    $('.chick').mouseleave(function(){
 
-            $('.video .mouse').addClass('style1')
-        })
-
-        $('.chick').mouseleave(function(){
-
-            $('.video .mouse').removeClass('style1')
-        })
+        $('.video .mouse').removeClass('style1')
     })
 
 })
