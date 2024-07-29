@@ -22,13 +22,28 @@ $(document).ready(function(){
 
     // h1을 클릭했을 때,
     // 1. .intro에 addClass fadein
-    // 2. 영상 다시 재생
-    // 3. 다시 addClass fadeout
+    // 2. .intro_txt .intro_txt1,2,3에 addClass
+    // 3. 영상 다시 재생
+    // 4. 다시 addClass fadeout
     $('h1').on('click',function(){
      
-        $('.intro').removeClass('fadeout').addClass('fadein')
+        $('.intro').removeClass('fadeout')
+        $('.intro').addClass('fadein')
 
+        $('.intro_txt .intro_txt1').removeClass('on')
+        $('.intro_txt .intro_txt2').removeClass('on')
+        $('.intro_txt .intro_txt3').removeClass('on')
+        $('.intro_txt .intro_txt1').addClass('on')
+        $('.intro_txt .intro_txt2').addClass('on')
+        $('.intro_txt .intro_txt3').addClass('on')
+
+        $('video')[0].currentTime = 0
         $('video')[0].play()
+
+        setTimeout(function(){
+            $('.intro').removeClass('fadein')
+            $('.intro').addClass('fadeout')
+        },9300)
     })
 
 
