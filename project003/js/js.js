@@ -20,11 +20,21 @@ $(document).ready(function(){
 
 
 
+    // .intro_btn을 클릭했을 때, .intro에 addClass fadeout
+    $('.intro_btn').click(function(){
+
+        $('.intro').addClass('fadeout')
+    })
+
+
+
+
     // h1을 클릭했을 때,
     // 1. .intro에 addClass fadein
     // 2. .intro_txt .intro_txt1,2,3에 addClass
     // 3. 영상 다시 재생
     // 4. 다시 addClass fadeout
+    // 5. .intro_btn을 클릭하면 바로 다시 fadeout
     $('h1').on('click',function(){
      
         $('.intro').removeClass('fadeout')
@@ -44,6 +54,12 @@ $(document).ready(function(){
             $('.intro').removeClass('fadein')
             $('.intro').addClass('fadeout')
         },9300)
+
+        $('.intro_btn').click(function(){
+            $('.intro').removeClass('fadein')
+            $('.intro').removeClass('fadeout')
+            $('.intro').addClass('fadeout')
+        })
     })
 
 

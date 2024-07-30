@@ -133,6 +133,27 @@ body.on::-webkit-scrollbar{
     top: 50%;
 }
 
+.intro_btn {
+    width: 150px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    margin-left: -75px;
+    font-size: 18px;
+    color: #398AB9;
+    border: 2px solid #398AB9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: all 0.7s;
+    cursor: pointer;
+}
+.intro_btn:hover {
+    background-color: #AACADD;
+}
+
 
 
 
